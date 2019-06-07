@@ -9,11 +9,7 @@ export class GalleryController {
   ) {}
 
   @Get(':id')
-  gallery(@Param('id') id: string) {
-
-  }
-
-  galleries() {
-    return
+  gallery(@Param('id') id: string): Gallery {
+    return {};
   }
 }

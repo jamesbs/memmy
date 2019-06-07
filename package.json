@@ -6,7 +6,9 @@
   "author": "James Salas <osdev@jamesbs.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
 }
