@@ -7,5 +7,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamesbs/memmy.git"
-  }
+  },
+  "main": "index.ts"
 }
