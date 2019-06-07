@@ -10,5 +10,8 @@
     "packages": [
       "packages/*"
     ]
+  },
+  "scripts": {
+    "start": "yarn workspace @memmy/web start && yarn workspace @memmy/gateway start"
   }
 }
