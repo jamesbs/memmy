@@ -119,7 +119,7 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/cli@~8.0.2":
+"@angular/cli@^8.0.2", "@angular/cli@~8.0.2":
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-8.0.2.tgz#b64c044342f0af2ed7e78e51c54087693407a47b"
   integrity sha512-xXSCwTKonC6nMqKPDlEFhXjKBu85jVB+KYo2tLU+RKtgFeIF/hTaUWQTvWXRwRsQAfBhB1cwe0oijdljOItTgw==
@@ -142,7 +142,7 @@
     universal-analytics "^0.4.20"
     uuid "^3.3.2"
 
-"@angular/common@~8.0.0":
+"@angular/common@^8.0.0", "@angular/common@~8.0.0":
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-8.0.0.tgz#700aeda9be8af96692fce0ea6bf6157f7c874c0e"
   integrity sha512-iOAJZ0+1zTRHnHE/5G30+4Q66W1pfZkSkxZIXvgijZ+wtuNloYdWNy/IdZ/m7ayBI7A6FsYEhyMUoWz2HVEJNw==
@@ -173,7 +173,7 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/core@~8.0.0":
+"@angular/core@^8.0.0", "@angular/core@~8.0.0":
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-8.0.0.tgz#bf7a582b818e9181d830219907470e2b865ba32f"
   integrity sha512-mrkP1PTzqCmZGLYll+TDyawLXHzi+FcRPqSuRxCmDMthUUE93SLXT2yISDkx9aMPtFKgFr6KfrIkKuCz16BP/g==
@@ -9855,7 +9855,7 @@ yn@^3.0.0:
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.0.tgz#fcbe2db63610361afcc5eb9e0ac91e976d046114"
   integrity sha512-kKfnnYkbTfrAdd0xICNFw7Atm8nKpLcLv9AZGEt+kczL/WQVai4e2V6ZN8U/O+iI6WrNuJjNNOyu4zfhl9D3Hg==
 
-zone.js@~0.9.1:
+zone.js@^0.9.1, zone.js@~0.9.1:
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.9.1.tgz#e37c6e5c54c13fae4de26b5ffe8d8e9212da6d9b"
   integrity sha512-GkPiJL8jifSrKReKaTZ5jkhrMEgXbXYC+IPo1iquBjayRa0q86w3Dipjn8b415jpitMExe9lV8iTsv8tk3DGag==
