@@ -1,0 +1,9 @@
+{
+  "name": "memmy-mem",
+  "version": "1.0.0",
+  "description": "Mem provider",
+  "main": "dist/index.js",
+  "repository": "https://github.com/jamesbs/memmy",
+  "author": "James Salas <osdev@jamesbs.com>",
+  "license": "MIT"
+}
