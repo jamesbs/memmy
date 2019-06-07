@@ -8,14 +8,8 @@ export class GalleryController {
     private galleryService: GalleryService,
   ) {}
 
-  @Get(':id')
-  gallery(@Param('id') id: string): Gallery {
-    return {
-      id: 'blah',
-      title: 'blah',
-      subtitle: 'blah',
-      count: 0,
-      thumbs: {}
-    };
+  @Get()
+  galleries() {
+    return this.galleryService.getUserGalleries('some id');
   }
 }
