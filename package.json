@@ -1,13 +1,12 @@
 {
-  "name": "memmy",
-  "version": "1.0.0",
+  "name": "@memmy/app",
+  "version": "0.1.0",
   "description": "memmy app",
   "repository": "https://github.com/jamesbs/memmy",
   "author": "James Salas <osdev@jamesbs.com>",
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "web",
-    "mem"
+    "packages/*"
   ]
 }

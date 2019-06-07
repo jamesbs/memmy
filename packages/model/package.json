@@ -1,0 +1,7 @@
+{
+  "name": "@memmy/model",
+  "version": "0.1.0",
+  "description": "Model for memmy",
+  "author": "James Salas <osdev@jamesbs.com>",
+  "license": "MIT"
+}
