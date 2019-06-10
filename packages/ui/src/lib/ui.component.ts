@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <p>
       ui works!
     </p>
-  `,
-  styles: []
+  `
 })
 export class UiComponent implements OnInit {
 

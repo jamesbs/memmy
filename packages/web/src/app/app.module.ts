@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { UiModule } from '@memmy/ui';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,11 +9,12 @@ import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    UiModule,
     StoreModule.forRoot(reducers, { metaReducers })
   ],
   providers: [],
