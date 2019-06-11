@@ -6,6 +6,6 @@ import { ModalComponent } from './modal/modal.component';
   declarations: [UiComponent, ModalComponent],
   imports: [
   ],
-  exports: [UiComponent, ModalComponent]
+  exports: [UiComponent]
 })
 export class UiModule { }
