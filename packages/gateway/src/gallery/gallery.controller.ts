@@ -2,7 +2,7 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { GalleryService } from './gallery.service';
 import { Gallery } from '@memmy/model';
 
-@Controller('gallery')
+@Controller('galleries')
 export class GalleryController {
   constructor(
     private galleryService: GalleryService,
@@ -10,6 +10,6 @@ export class GalleryController {
 
   @Get()
   galleries() {
-    return this.galleryService.getUserGalleries('some id');
+    return this.galleryService.getUserGalleries({ id: 'some id' });
   }
 }

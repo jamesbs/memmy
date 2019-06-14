@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ServerModule } from './server/server.module';
+import { Environment } from './environment';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,15 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServerModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: Environment,
+      useValue: Environment,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

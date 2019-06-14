@@ -1,3 +1,4 @@
 import { Gallery } from './gallery';
+import { Identifiable } from './primitives/identifiable';
 
-export type GetUserGalleries = (userId: string) => Gallery[]
+export type GetUserGalleries = (user: Identifiable) => Gallery[]

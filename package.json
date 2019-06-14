@@ -6,15 +6,11 @@
   "author": "James Salas <osdev@jamesbs.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
   "scripts": {
     "start": "yarn workspace @memmy/web start && yarn workspace @memmy/gateway start"
   },
   "devDependencies": {
-    "@angular/cli": "^8.0.2"
+    "@angular/cli": "^8.0.2",
+    "lerna": "^3.15.0"
   }
 }

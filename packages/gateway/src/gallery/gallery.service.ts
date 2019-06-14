@@ -1,12 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { IGalleryService } from './gallery.interface';
+import { id } from '@memmy/model';
 
 @Injectable()
 export class GalleryService implements IGalleryService {
-  getUserGalleries = userId => {
+  getUserGalleries = user => {
     return [
       {
-        id: `blah+${userId}`,
+        id: `blah+${id(user)}`,
         title: 'Christmas 2016',
         count: 6,
         thumbs: {
