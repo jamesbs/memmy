@@ -1,9 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-describe('GalleryService', () => {
+
+import { ServerClientService } from './server-client.service';
+
+describe('ServerClientService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: GalleryService = TestBed.get(GalleryService);
+    const service: ServerClientService = TestBed.get(ServerClientService);
     expect(service).toBeTruthy();
   });
 });

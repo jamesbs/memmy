@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AuthorizationService } from './authorization.service';
+import { UserGalleriesService } from './user-galleries.service';
 
-describe('AuthorizationService', () => {
+describe('UserGalleriesService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AuthorizationService = TestBed.get(AuthorizationService);
+    const service: UserGalleriesService = TestBed.get(UserGalleriesService);
     expect(service).toBeTruthy();
   });
 });
