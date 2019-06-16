@@ -5,11 +5,13 @@
     "types": []
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "../model/**/*.ts"
   ],
   "exclude": [
     "src/test.ts",
     "src/**/*.spec.ts",
-    "**/*.stories.ts"
+    "**/*.stories.ts",
+    "../model/**/*.spec.ts"
   ]
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { GetUserGalleries, HttpGetUserGalleries } from '../server/get-user-galleries';
+import { GetUserGalleries } from '../server/get-user-galleries';
 
 @Component({
   selector: 'app-dash',
@@ -9,7 +9,7 @@ import { GetUserGalleries, HttpGetUserGalleries } from '../server/get-user-galle
 export class DashComponent implements OnInit {
   galleries = [];
 
-  constructor(@Inject(GetUserGalleries) private getUserGalleries: HttpGetUserGalleries) { }
+  constructor(@Inject(GetUserGalleries) private getUserGalleries: GetUserGalleries) { }
 
   ngOnInit() {
     this.getUserGalleries({ id: 'some id' }).subscribe(galleries => {

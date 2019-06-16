@@ -11,11 +11,11 @@ export class AuthorizationService {
   constructor(private authentication: AuthenticationService) { }
 
   authorize(user: User) {
-    return (request: HttpRequest<unknown>) =>
-      request.clone({
-        setHeaders: {
-          Authorization: `Bearer ${stringifyToken(this.authentication.credentials(user))}`,
-        },
-      });
+    return (request: HttpRequest<unknown>) => request
+      // request.clone({
+      //   setHeaders: {
+      //     Authorization: `Bearer ${stringifyToken(this.authentication.credentials(user))}`,
+      //   },
+      // });
   }
 }

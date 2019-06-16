@@ -1,5 +1,5 @@
-import { GetUserGalleries } from '@memmy/model';
+import { IGetUserGalleries } from '@memmy/model';
 
 export interface IGalleryService {
-  getUserGalleries: GetUserGalleries;
+  getUserGalleries: IGetUserGalleries;
 }
