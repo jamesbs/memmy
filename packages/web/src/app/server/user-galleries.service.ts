@@ -7,7 +7,7 @@ import { ServerClientService } from './server-client.service';
 })
 export class UserGalleriesService {
 
-  constructor( private serverClient: ServerClientService) { }
+  constructor(private serverClient: ServerClientService) { }
 
   getUserGalleries(user: User) {
     return this.serverClient.serverCall(

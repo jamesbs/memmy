@@ -12,10 +12,11 @@ export class DashComponent implements OnInit {
   constructor(private userGalleries: UserGalleriesService) { }
 
   ngOnInit() {
-    this.userGalleries.getUserGalleries({ id: 'some id' }).subscribe(galleries => {
-      console.log('galleries');
-      console.log(galleries);
-    })
+    this.userGalleries.getUserGalleries({ id: 'some id' })
+      .subscribe(galleries => {
+        console.log('galleries');
+        console.log(galleries);
+      });
   }
 
 }
