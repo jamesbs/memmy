@@ -19,7 +19,7 @@ export class ServerClientService {
   serverCall<T>(route: ServerRoute, options: ServerCallOptions = {}) {
     let call = this.serverRouter.route(route);
 
-    if(options.authorize !== undefined) {
+    if (options.authorize !== undefined) {
       call = this.authorizeService.withAuthorization(call, options.authorize);
     }
 
