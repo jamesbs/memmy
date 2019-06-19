@@ -18,3 +18,8 @@
 body {
   font: 1em 'Roboto Condensed', sans-serif;
 }
+
+a {
+  color: #a43424;
+  text-decoration: none;
+}
