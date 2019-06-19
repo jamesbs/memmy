@@ -4,6 +4,8 @@ import { map, filter } from 'rxjs/operators';
 import { Gallery } from '@memmy/model';
 import { Observable } from 'rxjs';
 import { galleryToListItem } from './gallery-to-list-item';
+import { ActivatedRoute } from '@angular/router';
+import { ListItem } from 'projects/ui/src/lib/fixed-list/list-item';
 
 @Component({
   selector: 'app-dash',
@@ -11,15 +13,11 @@ import { galleryToListItem } from './gallery-to-list-item';
   styleUrls: ['./dash.component.css']
 })
 export class DashComponent implements OnInit {
-  galleries: Observable<Gallery[]> = this.userGalleries.getUserGalleries({ id: 'some id' })
-    .pipe(
-      filter(item => item.body !== undefined),
-      map(({ body }) => body),
-    );
+  galleries: Observable<Gallery[]> = this.route.data.pipe(map(({ galleries }) => galleries));
 
-  galleryToListItem = galleryToListItem;
+  galleriesToListItems = (galleries: Gallery[]) => galleries.map(galleryToListItem);
 
-  constructor(private userGalleries: UserGalleriesService) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
