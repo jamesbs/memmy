@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UserGalleriesService } from '../server/user-galleries.service';
+import { UserGalleriesService } from '../model/user-galleries.service';
 import { filter, map, first, tap } from 'rxjs/operators';
 import { Resolve } from '@angular/router';
 import { Gallery } from '@memmy/model';

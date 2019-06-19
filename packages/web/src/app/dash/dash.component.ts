@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { UserGalleriesService } from '../server/user-galleries.service';
+import { UserGalleriesService } from '../model/user-galleries.service';
 import { map, filter } from 'rxjs/operators';
 import { Gallery } from '@memmy/model';
 import { Observable } from 'rxjs';
