@@ -1,7 +1,8 @@
 <div
   *ngFor="let item of items"
   class="item">
-  <div class="image"></div>
+  <a *ngIf="item.link" class="image" href="#"></a>
+  <div *ngIf="!item.link" class="image"></div>
   <div class="title"><a href="#">{{ item.title }}</a></div>
-  <div class="subtitle"><a href="#">{{ item.subtitle }}</a></div>
+  <div *ngIf="item.subtitle" class="subtitle">{{ item.subtitle }}</div>
 </div>
