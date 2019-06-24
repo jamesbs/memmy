@@ -27,7 +27,10 @@
     "@memmy/model": "0.1.0",
     "@nestjs/common": "^6.0.0",
     "@nestjs/core": "^6.0.0",
+    "@nestjs/passport": "^6.1.0",
     "@nestjs/platform-express": "^6.0.0",
+    "passport": "^0.4.0",
+    "passport-http-bearer": "^1.0.1",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
     "rxjs": "^6.3.3"

@@ -1,6 +1,7 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, UseGuards, Req } from '@nestjs/common';
 import { GalleryService } from './gallery.service';
-import { Gallery } from '@memmy/model';
+import { AuthGuard } from '@nestjs/passport';
+import { AuthenticatedRequest } from '../auth/authenticated-request';
 
 @Controller('galleries')
 export class GalleryController {
@@ -9,7 +10,8 @@ export class GalleryController {
   ) {}
 
   @Get()
-  galleries() {
-    return this.galleryService.getUserGalleries({ id: 'some id' });
+  @UseGuards(AuthGuard())
+  galleries(@Req() { user }: AuthenticatedRequest) {
+    return this.galleryService.getUserGalleries(user);
   }
 }
