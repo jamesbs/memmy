@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  gatewayUrl: 'http://localhost:3000',
+  gatewayUrl: 'https://localhost:3000',
 };
 
 /*

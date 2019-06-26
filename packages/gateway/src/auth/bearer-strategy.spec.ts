@@ -16,7 +16,7 @@ describe('BearerStrategy', () => {
     const bearerStrategy = new BearerStrategy(
       { getUser: () => user },
       { isAuthorized: () => false },
-    )
+    );
     expect(() => { bearerStrategy.validate('some token'); }).toThrowError(UnauthorizedException);
   });
 

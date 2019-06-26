@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
-import { User, Gallery } from '@memmy/model';
-import { ServerClientService } from './server-client.service';
-import { HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { IGetUserGalleries } from '@memmy/model';
+import { HttpClient } from '@angular/common/http';
+import { ThroughHttpClient } from '../core/through-http-client';
+import { ServerRouterService } from './server-router.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserGalleriesService {
 
-  constructor(private serverClient: ServerClientService) { }
+  constructor(
+    private serverRouter: ServerRouterService,
+    private httpClient: HttpClient) { }
 
-  getUserGalleries(user: User): Observable<HttpResponse<Gallery[]>> {
-    return this.serverClient.serverCall<Gallery[]>(
-      'getUserGalleries',
-      { authorize: user }
-    ) as Observable<HttpResponse<Gallery[]>>;
-  }
-
+  getUserGalleries: ThroughHttpClient<IGetUserGalleries> = user =>
+    this.httpClient.request(
+      this.serverRouter.routes.getUserGalleries({ authorization: user }),
+    )
 }

@@ -3,20 +3,21 @@ import { UserGalleriesService } from '../model/user-galleries.service';
 import { filter, map, first, tap } from 'rxjs/operators';
 import { Resolve } from '@angular/router';
 import { Gallery } from '@memmy/model';
+import { isHttpResponse, getResponseBody } from '../core/http-response';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DashGalleriesService implements Resolve<Gallery[]>{
+export class DashGalleriesService implements Resolve<Gallery[]> {
 
   constructor(private userGalleries: UserGalleriesService) { }
 
   resolve() {
     return this.userGalleries.getUserGalleries({ id: 'some id' })
       .pipe(
-        filter(item => item.body !== undefined),
+        filter(isHttpResponse),
         first(),
-        map(({ body }) => body),
+        map(getResponseBody),
       );
   }
 }

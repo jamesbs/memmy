@@ -4,8 +4,8 @@ import { DashComponent } from './dash.component';
 import { DashGalleriesService } from './dash-galleries.service';
 
 const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: DashComponent,
     resolve: {
       galleries: DashGalleriesService,
