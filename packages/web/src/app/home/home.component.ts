@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../model/auth/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+  ) { }
 
-  ngOnInit() {
+  login() {
+    const credentials = this.loginService.login({
+      username: 'blah',
+      password: 'blah',
+    });
+
+    if(credentials) {
+      this.router.navigate(['dashboard']);
+    }
   }
 
 }

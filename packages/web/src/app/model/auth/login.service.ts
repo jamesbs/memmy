@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
-import { LoginCredentials } from '@memmy/model';
+import { ILogin, LoginCredentials } from '@memmy/model';
+import { ServerRouterService } from '../server-router.service';
+import { HttpClient } from '@angular/common/http';
+import { ThroughHttpClient } from 'src/app/core/through-http-client';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient,
+    private serverRouter: ServerRouterService) { }
 
-  login(credentials: LoginCredentials) {
-
-  }
+  login: ThroughHttpClient<ILogin> = (credentials: LoginCredentials) =>
+    this.httpClient.request(this.serverRouter.routes.login(credentials))
 }

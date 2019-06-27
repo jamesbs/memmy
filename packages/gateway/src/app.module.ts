@@ -5,9 +5,10 @@ import { GalleryModule } from './gallery/gallery.module';
 import { AuthenticationService } from './auth/authentication.service';
 import { AuthorizationService } from './auth/authorization.service';
 import { UserService } from './user/user.service';
+import { LoginModule } from './login/login.module';
 
 @Module({
-  imports: [GalleryModule],
+  imports: [GalleryModule, LoginModule],
   controllers: [AppController],
   providers: [AppService, AuthenticationService, AuthorizationService, UserService],
 })
