@@ -1,4 +1,4 @@
 import { LoginCredentials } from './login-credentials';
-import { AccessToken } from './access-token';
+import { Token } from './token';
 
-export type ILogin = (credentials: LoginCredentials) => AccessToken;
+export type ILogin = (credentials: LoginCredentials) => Token;

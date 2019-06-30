@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { LoginCredentials } from '@memmy/model';
+import { LoginCredentials, Token } from '@memmy/model';
 
 @Injectable()
 export class LoginService {
-  authenticateLogin(credentials: LoginCredentials) {
-    return 'Y7s6tGAHtkjkFmTV';
+  authenticateLogin(credentials: LoginCredentials): Token {
+    return { token: 'Y7s6tGAHtkjkFmTV' };
   }
 }

@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest } from '@angular/common/http';
-import { stringifyToken, Identifiable } from '@memmy/model';
-import { ServerCredentialsService } from './server-credentials.service';
+import { token } from '@memmy/model';
 import { RoutedRequest } from '../routed-request';
-import { WithAuthIdentifier, getIdentifier, withoutAuthIdentifier } from './with-auth-identifier';
+import { WithAuthorizer, getAuthorizer, withoutAuthorizer } from './with-authorizer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthorizeService {
 
-  constructor(
-    private serverCredentials: ServerCredentialsService,
-  ) { }
+  constructor() { }
 
   withAuthorization<T, U = unknown>(requestGenerator: RoutedRequest<T, U>) {
-    return (argsWithAuth: T & WithAuthIdentifier) => {
-      const credentials = this.serverCredentials.getCredentials(getIdentifier(argsWithAuth));
+    return (argsWithAuth: T & WithAuthorizer) => {
+      const credentials = getAuthorizer(argsWithAuth);
 
-      return requestGenerator(withoutAuthIdentifier(argsWithAuth)).clone({
+      return requestGenerator(withoutAuthorizer(argsWithAuth)).clone({
         setHeaders: {
-          Authorization: `Bearer ${stringifyToken(credentials)}`,
+          Authorization: `Bearer ${token(credentials)}`,
         },
       });
     };

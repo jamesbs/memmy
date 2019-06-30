@@ -1,5 +1,5 @@
 export type Token = { token: string };
 
-export function stringifyToken({ token }: Token) {
-  return token;
+export function token(token: Token) {
+  return token.token;
 }

@@ -1,23 +1,20 @@
 import { Injectable } from '@angular/core';
-import { UserGalleriesService } from '../model/user-galleries.service';
-import { filter, map, first, tap } from 'rxjs/operators';
 import { Resolve } from '@angular/router';
 import { Gallery } from '@memmy/model';
-import { isHttpResponse, getResponseBody } from '../core/http-response';
+import { ServerCredentialsService } from '../model/auth/server-credentials.service';
+import { GalleryService } from '../model/gallery.service';
+import { responseOf } from '../core/response-of';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashGalleriesService implements Resolve<Gallery[]> {
 
-  constructor(private userGalleries: UserGalleriesService) { }
+  constructor(
+    private gallery: GalleryService,
+    private serverCredentials: ServerCredentialsService) { }
 
   resolve() {
-    return this.userGalleries.getUserGalleries({ id: 'some id' })
-      .pipe(
-        filter(isHttpResponse),
-        first(),
-        map(getResponseBody),
-      );
+    return responseOf(this.gallery.getGalleriesByToken(this.serverCredentials.credentials));
   }
 }

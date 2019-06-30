@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home.component';
+import { isAuthenticatedMatcher } from './is-authenticated.matcher';
 
 const routes: Routes = [
   {
+    matcher: isAuthenticatedMatcher,
+    loadChildren: () => import('../dash/dash.module')
+      .then(mod => mod.DashModule),
+  },
+  {
     path: '',
-    component: HomeComponent,
-  }
+    loadChildren: () => import('../login/login.module')
+      .then(mod => mod.LoginModule)
+  },
 ];
 
 @NgModule({

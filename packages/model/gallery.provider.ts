@@ -1,4 +1,7 @@
 import { Gallery } from './gallery';
-import { Identifiable } from './primitives/identifiable';
+import { Token } from './token';
+import { User } from './user';
 
-export type IGetUserGalleries = (userId: Identifiable) => Gallery[]
+export type IGetGalleriesByUser = (user: User) => Gallery[]
+
+export type IGetGalleriesByToken = (token: Token) => Gallery[]

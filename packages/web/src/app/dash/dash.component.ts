@@ -1,11 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { UserGalleriesService } from '../model/user-galleries.service';
 import { map, filter } from 'rxjs/operators';
 import { Gallery } from '@memmy/model';
 import { Observable } from 'rxjs';
 import { galleryToListItem } from './gallery-to-list-item';
 import { ActivatedRoute } from '@angular/router';
-import { ListItem } from 'projects/ui/src/lib/fixed-list/list-item';
 
 @Component({
   selector: 'app-dash',
