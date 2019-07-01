@@ -1,8 +1,18 @@
+
 <div
   *ngFor="let item of items"
   class="item">
-  <a *ngIf="item.link" class="image" href="#"></a>
-  <div *ngIf="!item.link" class="image"></div>
+  <a
+    *ngIf="item.link"
+    [style.background-image]="sanitizer.bypassSecurityTrustStyle('url(' + item.image + ')')"
+    class="image"
+    href="#">
+  </a>
+  <div
+    *ngIf="!item.link"
+    [style.background-image]="sanitizer.bypassSecurityTrustStyle('url(' + item.image + ')')"
+    class="image">
+  </div>
   <div class="title">
     <ng-container *ngIf="item.link">
       <a href="#">{{ item.title }}</a>
