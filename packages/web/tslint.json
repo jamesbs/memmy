@@ -87,9 +87,7 @@
     "use-pipe-transform-interface": true,
     "variable-name": [
       true,
-      {
-        "allow-leading-underscore": true
-      }
+      "allow-leading-underscore"
     ]
   },
   "rulesDirectory": [

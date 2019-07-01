@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { rootReducer } from './model/state/store/root';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,10 @@ import { rootReducer } from './model/state/store/root';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot(rootReducer)
+    StoreModule.forRoot(rootReducer),
+    StoreDevtoolsModule.instrument({
+      logOnly: environment.production,
+    }),
   ],
   providers: [
     {

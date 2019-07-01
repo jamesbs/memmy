@@ -7,3 +7,9 @@ export function token(token: Token) {
 export function isToken(sub: any): sub is Token {
   return typeof sub.token === 'string';
 }
+
+export function asToken({ token }: Token) {
+  return {
+    token,
+  };
+}
