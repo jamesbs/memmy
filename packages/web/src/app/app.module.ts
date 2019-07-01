@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { Environment } from './environment';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { rootReducer } from './model/state/store/root';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    StoreModule.forRoot(rootReducer)
   ],
   providers: [
     {
