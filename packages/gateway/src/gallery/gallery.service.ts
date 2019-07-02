@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { IGalleryService } from './gallery.interface';
-import { User, Gallery, id } from '@memmy/model';
+import { User, Gallery, id, GalleryProps } from '@memmy/model';
 import { galleryMockDb } from './gallery-mock-db';
 
 @Injectable()
@@ -9,7 +9,7 @@ export class GalleryService implements IGalleryService {
     return galleryMockDb[id(user)][galleryId];
   }
 
-  getUserGalleries(user: User): Gallery[] {
+  getUserGalleries(user: User): GalleryProps[] {
     return [
       {
         id: 'f2bc5d3b-d513-4284-b3b5-97d841a89659',
@@ -20,7 +20,7 @@ export class GalleryService implements IGalleryService {
         },
       },
       {
-        id: 'f2bc5d3b-d513-4284-b3b5-97d841a89659',
+        id: 'b7bbb0e0-6ca1-40e7-b5f2-59be332ea6bf',
         title: 'Japan 2016',
         count: 706,
         thumbs: {

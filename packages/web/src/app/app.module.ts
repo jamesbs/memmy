@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { rootReducer } from './model/state/store/root';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { localStorageSync } from 'ngrx-store-localstorage';
+import { initialServerState } from './model/state/store/server/server-state';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,18 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot(rootReducer),
+    StoreModule.forRoot(
+      rootReducer,
+      {
+        metaReducers: [
+          localStorageSync({
+            rehydrate: true,
+            keys: [
+              { server: ['credentials'] } as { server: (keyof typeof initialServerState)[]},
+            ],
+          }),
+        ]
+      }),
     StoreDevtoolsModule.instrument({
       logOnly: environment.production,
     }),

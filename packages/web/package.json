@@ -27,6 +27,7 @@
     "@types/ramda": "^0.26.9",
     "jss": "^9.8.7",
     "lodash": "^4.17.11",
+    "ngrx-store-localstorage": "^7.0.1",
     "ramda": "^0.26.1",
     "reselect": "^4.0.0",
     "rxjs": "~6.4.0",
