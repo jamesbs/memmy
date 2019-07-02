@@ -14,4 +14,10 @@ export class GalleryController {
   galleries(@Req() { user }: AuthenticatedRequest) {
     return this.galleryService.getUserGalleries(user);
   }
+
+  @Get(':galleryId')
+  @UseGuards(AuthGuard())
+  gallery(@Param('galleryId') galleryId: string, @Req() { user }: AuthenticatedRequest) {
+    return this.galleryService.getUserGallery(user, galleryId);
+  }
 }

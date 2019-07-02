@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { map, filter } from 'rxjs/operators';
-import { Gallery } from '@memmy/model';
+import { map} from 'rxjs/operators';
+import { GalleryProps } from '@memmy/model';
 import { Observable } from 'rxjs';
 import { galleryToListItem } from './gallery-to-list-item';
 import { ActivatedRoute } from '@angular/router';
@@ -11,9 +11,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./dash.component.css']
 })
 export class DashComponent implements OnInit {
-  galleries: Observable<Gallery[]> = this.route.data.pipe(map(({ galleries }) => galleries));
+  galleries: Observable<GalleryProps[]> = this.route.data.pipe(map(({ galleries }) => galleries));
 
-  galleriesToListItems = (galleries: Gallery[]) => galleries.map(galleryToListItem);
+  galleriesToListItems = (galleries: GalleryProps[]) => galleries.map(galleryToListItem);
 
   constructor(private route: ActivatedRoute) { }
 

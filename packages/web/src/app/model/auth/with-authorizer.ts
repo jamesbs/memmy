@@ -4,7 +4,8 @@ import { omit } from 'ramda';
 export interface WithAuthorizer {
   authorization: Token;
 }
-
+export function authorizeWith(token: Token): WithAuthorizer;
+export function authorizeWith<T>(token: Token, base: T): T & WithAuthorizer;
 export function authorizeWith(token: Token, base = {}) {
   return {
     authorization: token,

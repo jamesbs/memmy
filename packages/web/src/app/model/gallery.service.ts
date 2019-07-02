@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { IGetGalleriesByToken } from '@memmy/model';
+import { IGetGalleriesByToken, Token, IGetGalleryById } from '@memmy/model';
 import { HttpClient } from '@angular/common/http';
 import { ThroughHttpClient } from '../core/through-http-client';
-import { ServerRouterService } from './server-router.service';
+import { ServerRouterService } from './server-router/server-router.service';
 import { authorizeWith } from './auth/with-authorizer';
 
 @Injectable({
@@ -17,5 +17,10 @@ export class GalleryService {
   getGalleriesByToken: ThroughHttpClient<IGetGalleriesByToken> = token =>
     this.httpClient.request(
       this.serverRouter.routes.getUserGalleries(authorizeWith(token)),
+    )
+
+  getGallery: ThroughHttpClient<IGetGalleryById> = (token: Token, galleryId: string) =>
+    this.httpClient.request(
+      this.serverRouter.routes.getGallery(authorizeWith(token, { id: galleryId })),
     )
 }

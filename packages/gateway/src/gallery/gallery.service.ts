@@ -1,9 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { IGalleryService } from './gallery.interface';
-import { User, Gallery } from '@memmy/model';
+import { User, Gallery, id } from '@memmy/model';
+import { galleryMockDb } from './gallery-mock-db';
 
 @Injectable()
 export class GalleryService implements IGalleryService {
+  getUserGallery(user: User, galleryId: string) {
+    return galleryMockDb[id(user)][galleryId];
+  }
+
   getUserGalleries(user: User): Gallery[] {
     return [
       {

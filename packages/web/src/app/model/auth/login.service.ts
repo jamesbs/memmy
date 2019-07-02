@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ILogin, LoginCredentials, ServerCredentials, isToken } from '@memmy/model';
-import { ServerRouterService } from '../server-router.service';
+import { ServerRouterService } from '../server-router/server-router.service';
 import { HttpClient } from '@angular/common/http';
 import { ThroughHttpClient } from 'src/app/core/through-http-client';
 import { loginSuccessful } from '../state/action/login';

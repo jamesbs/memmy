@@ -6,7 +6,7 @@
     *ngIf="item.link"
     [style.background-image]="sanitizer.bypassSecurityTrustStyle('url(' + item.image + ')')"
     class="image"
-    href="#">
+    [routerLink]="item.link">
   </a>
   <div
     *ngIf="!item.link"
