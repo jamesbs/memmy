@@ -1,1 +1,5 @@
 <h1>{{gallery.title}}</h1>
+
+<div *ngFor="let image of gallery.images; let i = index;">
+  <a [href]="image">Image {{i}}</a>
+</div>
