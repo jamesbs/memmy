@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashComponent } from './dash.component';
-import { DashGalleriesService } from './dash-galleries.service';
+import { DashGalleriesResolver } from './dash-galleries.resolver';
+import { DashContainerComponent } from './dash.container.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DashComponent,
+    component: DashContainerComponent,
     resolve: {
-      galleries: DashGalleriesService,
+      galleries: DashGalleriesResolver,
     }
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
+  // providers: [DashGalleriesResolver],
   exports: [RouterModule],
 })
 export class DashRoutingModule { }

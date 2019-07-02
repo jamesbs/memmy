@@ -4,9 +4,10 @@ import { DashComponent } from './dash.component';
 import { DashRoutingModule } from './dash-routing.module';
 import { UiModule } from 'projects/ui/src/lib/ui.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DashContainerComponent } from './dash.container.component';
 
 @NgModule({
-  declarations: [DashComponent],
+  declarations: [DashComponent, DashContainerComponent],
   imports: [
     CommonModule,
     DashRoutingModule,

@@ -8,8 +8,7 @@ import { responseOf } from '../core/response-of';
 @Injectable({
   providedIn: 'root'
 })
-export class DashGalleriesService implements Resolve<GalleryProps[]> {
-
+export class DashGalleriesResolver implements Resolve<GalleryProps[]> {
   constructor(
     private gallery: GalleryService,
     private serverCredentials: ServerCredentialsService) { }

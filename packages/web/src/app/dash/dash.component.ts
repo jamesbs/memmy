@@ -1,22 +1,15 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { map} from 'rxjs/operators';
+import { Component, Input, ChangeDetectionStrategy  } from '@angular/core';
 import { GalleryProps } from '@memmy/model';
-import { Observable } from 'rxjs';
 import { galleryToListItem } from './gallery-to-list-item';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dash',
   templateUrl: './dash.component.html',
-  styleUrls: ['./dash.component.css']
+  styleUrls: ['./dash.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashComponent implements OnInit {
-  galleries: Observable<GalleryProps[]> = this.route.data.pipe(map(({ galleries }) => galleries));
+export class DashComponent {
+  @Input() galleries: GalleryProps[];
 
   galleriesToListItems = (galleries: GalleryProps[]) => galleries.map(galleryToListItem);
-
-  constructor(private route: ActivatedRoute) { }
-
-  ngOnInit() {
-  }
 }
