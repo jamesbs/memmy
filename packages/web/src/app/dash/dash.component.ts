@@ -5,7 +5,6 @@ import { galleryToListItem } from './gallery-to-list-item';
 @Component({
   selector: 'app-dash',
   templateUrl: './dash.component.html',
-  styleUrls: ['./dash.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashComponent {

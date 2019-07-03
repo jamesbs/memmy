@@ -4,13 +4,12 @@ import { appStyle } from './app.component.style';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'web';
 
-  sheet = jss.createStyleSheet(appStyle as any)
+  sheet = jss.createStyleSheet(appStyle)
 
   ngOnInit() {
     this.sheet.attach();

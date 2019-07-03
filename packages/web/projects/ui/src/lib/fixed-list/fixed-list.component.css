@@ -1,7 +1,3 @@
-:host {
-  display: flex;
-  flex-wrap: wrap;
-}
 .item {
   width: 200px;
   height: 200px;

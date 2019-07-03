@@ -1,19 +1,19 @@
 
 <div
   *ngFor="let item of items"
-  class="item">
+  [class]="sheet.classes.item">
   <a
     *ngIf="item.link"
     [style.background-image]="sanitizer.bypassSecurityTrustStyle('url(' + item.image + ')')"
-    class="image"
+    [class]="sheet.classes.itemImage"
     [routerLink]="item.link">
   </a>
   <div
     *ngIf="!item.link"
     [style.background-image]="sanitizer.bypassSecurityTrustStyle('url(' + item.image + ')')"
-    class="image">
+    [class]="sheet.classes.itemImage">
   </div>
-  <div class="title">
+  <div [class]="sheet.classes.itemTitle">
     <ng-container *ngIf="item.link">
       <a href="#">{{ item.title }}</a>
     </ng-container>
