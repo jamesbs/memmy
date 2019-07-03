@@ -15,7 +15,7 @@
   </div>
   <div [class]="sheet.classes.itemTitle">
     <ng-container *ngIf="item.link">
-      <a href="#">{{ item.title }}</a>
+      <a [routerLink]="item.link">{{ item.title }}</a>
     </ng-container>
     <ng-container *ngIf="!item.link">
       {{ item.title }}
