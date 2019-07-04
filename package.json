@@ -11,7 +11,6 @@
   },
   "devDependencies": {
     "@angular/cli": "^8.0.2",
-    "@types/jss": "^9.5.8",
     "lerna": "^3.15.0"
   }
 }
