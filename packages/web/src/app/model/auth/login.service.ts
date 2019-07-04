@@ -26,7 +26,7 @@ export class LoginService {
     this.dispatch.createDispatcher(loginSuccessful)(credentials);
     this.homeRouter.goToDashboard();
   }
-
+  
   login = (credentials: LoginCredentials) => {
     responseOf(this.tryLogin(credentials))
       .pipe(filter(isToken))
