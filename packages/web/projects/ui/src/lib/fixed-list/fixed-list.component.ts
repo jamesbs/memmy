@@ -11,7 +11,7 @@ import { fixedListStyle } from './fixed-list.component.style';
 export class FixedListComponent implements OnInit {
   @Input() items: ListItem[] = [];
 
-  sheet = jss.createStyleSheet(fixedListStyle as any);
+  sheet = jss.createStyleSheet(fixedListStyle);
 
   styles = this.sheet.classes;
 
