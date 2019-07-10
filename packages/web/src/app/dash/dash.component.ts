@@ -11,4 +11,19 @@ export class DashComponent {
   @Input() galleries: GalleryProps[];
 
   galleriesToListItems = (galleries: GalleryProps[]) => galleries.map(galleryToListItem);
+
+  addGallery = () => { 
+    console.log('click');
+  };
+
+  invite = () => {
+    console.log('invite');
+  }
+  upload = () => {
+    console.log('upload');
+  }
+
+  logout = () => {
+    console.log('logging out');
+  }
 }

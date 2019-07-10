@@ -7,8 +7,6 @@ import { actionBarStyle } from './action-bar.component.style';
   templateUrl: './action-bar.component.html'
 })
 export class ActionBarComponent implements OnInit {
-  addClicker = () => console.log('hello');
-
   sheet = jss.createStyleSheet(actionBarStyle);
 
   constructor() { }

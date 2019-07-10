@@ -2,4 +2,18 @@
 <lib-fixed-list [items]="galleriesToListItems(galleries)">
 </lib-fixed-list>
 <lib-action-bar>
+  <lib-action-bar-body>
+    <button (click)="addGallery()">
+      add
+    </button>
+    <button (click)="invite()">
+      invite
+    </button>
+    <button (click)="upload()">
+      upload
+    </button>
+    <button (click)="logout()">
+      logout
+    </button>
+  </lib-action-bar-body>
 </lib-action-bar>
