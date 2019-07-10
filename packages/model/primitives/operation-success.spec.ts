@@ -14,6 +14,6 @@ describe('Operation Success', () => {
   });
 
   it('hasn\'t failed', () => {
-    expect(hasFailed({ status: 'succeeded' })).toBe(true);
+    expect(hasFailed({ status: 'succeeded' })).toBe(false);
   });
 });
