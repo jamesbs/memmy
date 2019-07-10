@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy  } from '@angular/core';
-import { GalleryProps } from '@memmy/model';
+import { GalleryProps, nullOperation } from '@memmy/model';
 import { galleryToListItem } from './gallery-to-list-item';
 
 @Component({
@@ -9,6 +9,7 @@ import { galleryToListItem } from './gallery-to-list-item';
 })
 export class DashComponent {
   @Input() galleries: GalleryProps[];
+  @Input() logout = nullOperation;
 
   galleriesToListItems = (galleries: GalleryProps[]) => galleries.map(galleryToListItem);
 
@@ -21,9 +22,5 @@ export class DashComponent {
   }
   upload = () => {
     console.log('upload');
-  }
-
-  logout = () => {
-    console.log('logging out');
   }
 }

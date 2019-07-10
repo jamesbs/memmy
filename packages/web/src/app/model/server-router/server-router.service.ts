@@ -3,7 +3,7 @@ import { Environment } from '../../environment';
 import { HttpRequest } from '@angular/common/http';
 import { GatewayService } from '../gateway.service';
 import * as join from 'url-join';
-import { LoginCredentials, Identifiable } from '@memmy/model';
+import { LoginCredentials, Identifiable, Token } from '@memmy/model';
 import { AuthorizeService } from '../auth/authorize.service';
 
 @Injectable({
@@ -23,6 +23,9 @@ export class ServerRouterService {
     login:
       (body: LoginCredentials) =>
         new HttpRequest('POST', join(this.gateway, 'login'), body),
+
+    logout:
+      (body: Token) => new HttpRequest('POST', join(this.gateway, 'logout'), body),
 
     getUserGalleries:
       this.authorizeService.withAuthorization(

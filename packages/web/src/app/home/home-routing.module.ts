@@ -13,6 +13,11 @@ export const routes: Routes = [
     loadChildren: () => import('../login/login.module')
       .then(mod => mod.LoginModule)
   },
+  { 
+    path: 'logged-out',
+    loadChildren: () => import('../logged-out/logged-out.module')
+      .then(mod => mod.LoggedOutModule)
+  }
 ];
 
 @NgModule({

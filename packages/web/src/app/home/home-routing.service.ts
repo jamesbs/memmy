@@ -10,4 +10,8 @@ export class HomeRoutingService {
   goToDashboard() {
     this.router.navigate(['']);
   }
+  
+  goToLoggedOut() {
+    this.router.navigate(['logged-out']);
+  }
 }
