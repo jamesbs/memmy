@@ -32,6 +32,7 @@ export class LogoutService {
     responseOf(this.tryLogout(token))
       .subscribe(result => {
         if(hasSucceeded(result)) {
+          console.log('logout succeeded!')
           this.logoutSucceeded();
         }
       })
