@@ -11,6 +11,7 @@ export * from './server-credentials';
 export * from './token';
 export * from './user-gallery';
 export * from './user';
+export * from './primitives/generated-data';
 export * from './primitives/identifiable';
 export * from './primitives/null-operation';
 export * from './primitives/operation-success';

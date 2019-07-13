@@ -5,14 +5,20 @@ import { DashRoutingModule } from './dash-routing.module';
 import { UiModule } from 'projects/ui/src/lib/ui.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashContainerComponent } from './dash.container.component';
+import { MatDialogModule } from '@angular/material';
+import { AddGalleryDialogComponent } from '../common/add-gallery-dialog/add-gallery-dialog.component';
 
 @NgModule({
-  declarations: [DashComponent, DashContainerComponent],
+  declarations: [DashComponent, DashContainerComponent, AddGalleryDialogComponent],
   imports: [
     CommonModule,
     DashRoutingModule,
     UiModule,
     HttpClientModule,
-  ]
+    MatDialogModule,
+  ],
+  entryComponents: [
+    AddGalleryDialogComponent,
+  ],
 })
 export class DashModule { }

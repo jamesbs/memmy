@@ -12,7 +12,7 @@ import { AuthorizeService } from '../auth/authorize.service';
 export class ServerRouterService {
   constructor(
     private authorizeService: AuthorizeService,
-    gatewayService: GatewayService
+    gatewayService: GatewayService,
   ) {
     this.gateway = gatewayService.gateway;
   }
@@ -29,13 +29,19 @@ export class ServerRouterService {
 
     getUserGalleries:
       this.authorizeService.withAuthorization(
-        () => new HttpRequest('GET', join(this.gateway, 'galleries')
-      )),
+        () => new HttpRequest('GET', join(this.gateway, 'galleries'))
+      ),
 
     getGallery:
       this.authorizeService.withAuthorization(
         ({ id: galleryId }: Identifiable) =>
-          new HttpRequest('GET', join(this.gateway, 'galleries', galleryId)
-      )),
+          new HttpRequest('GET', join(this.gateway, 'galleries', galleryId))
+      ),
+    
+    addGallery:
+      this.authorizeService.withAuthorization(
+        (body: { name: string }) =>
+          new HttpRequest('POST', join(this.gateway, 'galleries', 'add'), body),
+      )
   };
 }

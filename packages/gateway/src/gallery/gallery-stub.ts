@@ -1,4 +1,6 @@
-export const galleryMockDb = {
+import { Gallery } from '@memmy/model';
+
+export const galleryStub: { [userId: string]: { [galleryId: string]: Gallery } } = {
   user: {
     'f2bc5d3b-d513-4284-b3b5-97d841a89659': {
       id: 'f2bc5d3b-d513-4284-b3b5-97d841a89659',
