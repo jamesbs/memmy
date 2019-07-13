@@ -5,7 +5,7 @@ import { ServerCredentialsService } from '../model/auth/server-credentials.servi
 import { GalleryService } from '../model/gallery.service';
 import { responseOf } from '../core/response-of';
 import { tap } from 'rxjs/operators';
-import { receivedGalleries } from '../model/state/action/gallery/received-galleries';
+import { galleriesReceived } from '../model/state/action/gallery/galleries-received';
 import { Store } from '@ngrx/store';
 import { RootState } from '../model/state/store/root';
 
@@ -21,7 +21,7 @@ export class DashGalleriesResolver implements Resolve<GalleryProps[]> {
   resolve() {
     return responseOf(this.gallery.getGalleriesByToken(this.serverCredentials.credentials))
       .pipe(tap(galleries => {
-        this.store.dispatch(receivedGalleries({ galleries }));
+        this.store.dispatch(galleriesReceived({ galleries }));
       }));
   }
 }
