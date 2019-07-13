@@ -4,7 +4,7 @@
   [class]="sheet.classes.item">
   <a
     *ngIf="item.link"
-    [style.background-image]="sanitizer.bypassSecurityTrustStyle('url(' + item.image + ')')"
+    [style.background-image]="item.image ? sanitizer.bypassSecurityTrustStyle('url(' + item.image + ')') : ''"
     [class]="sheet.classes.itemImage"
     [routerLink]="item.link">
   </a>
