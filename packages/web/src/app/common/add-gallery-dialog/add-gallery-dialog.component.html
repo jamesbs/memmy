@@ -1,8 +1,26 @@
 <h1 mat-dialog-title>Add a gallery</h1>
-<div mat-dialog-content>
-  <input name="gallery-name" title="Gallery name" #input>
+<div class="content" mat-dialog-content>
+  <mat-form-field class="full-width">
+    <input
+      matInput 
+      name="gallery-name"
+      placeholder="Gallery name" 
+      #input>
+  </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button (click)="cancel()">Cancel</button>
-  <button (click)="add(input.value)">Add</button>
+  <button 
+    class="button"
+    mat-flat-button 
+    color="primary"
+    (click)="cancel()">
+    Cancel
+  </button>
+  <button 
+    class="button"
+    mat-flat-button 
+    color="primary"
+    (click)="add(input.value)">
+    Add
+  </button>
 </div>

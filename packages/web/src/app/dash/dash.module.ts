@@ -5,7 +5,7 @@ import { DashRoutingModule } from './dash-routing.module';
 import { UiModule } from 'projects/ui/src/lib/ui.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashContainerComponent } from './dash.container.component';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule, MatButtonModule, MatInputModule } from '@angular/material';
 import { AddGalleryDialogComponent } from '../common/add-gallery-dialog/add-gallery-dialog.component';
 
 @NgModule({
@@ -16,6 +16,8 @@ import { AddGalleryDialogComponent } from '../common/add-gallery-dialog/add-gall
     UiModule,
     HttpClientModule,
     MatDialogModule,
+    MatButtonModule,
+    MatInputModule,
   ],
   entryComponents: [
     AddGalleryDialogComponent,

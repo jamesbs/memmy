@@ -1,0 +1,11 @@
+.button { 
+  margin-right: 0.8rem;
+}
+
+.content {
+  min-width: 400px;
+}
+
+.full-width {
+  width: 100%;
+}

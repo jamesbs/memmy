@@ -7,11 +7,10 @@ import { hasSucceeded, getGenerated } from '@memmy/model';
 import { galleryAdded } from 'src/app/model/state/action/gallery/gallery-added';
 import { Store } from '@ngrx/store';
 import { RootState } from 'src/app/model/state/store/root';
-
 @Component({
   selector: 'app-add-gallery-dialog',
   templateUrl: './add-gallery-dialog.component.html',
-  styleUrls: ['./add-gallery-dialog.component.css']
+  styleUrls: ['./add-gallery-dialog.component.css'],
 })
 export class AddGalleryDialogComponent  {
   constructor(

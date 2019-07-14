@@ -23,7 +23,9 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [],
+            "styles": [
+              "src/app/styles/mat-theme.scss"
+            ],
             "scripts": []
           },
           "configurations": {
