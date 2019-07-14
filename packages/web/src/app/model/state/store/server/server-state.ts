@@ -1,14 +1,11 @@
 import { combineReducers } from '@ngrx/store';
-import { initialServerCredentialsState, serverCredentialsReducer } from './server-credentials';
+import { serverCredentialsReducer } from './server-credentials';
+import { nullAction } from 'src/app/core/null-action';
 
-export interface ServerState {
-  credentials: typeof initialServerCredentialsState;
-}
-
-export const initialServerState: ServerState = {
-  credentials: initialServerCredentialsState,
-};
+export type ServerState = { [K in keyof typeof initialServerState]: typeof initialServerState[K] };
 
 export const serverReducer = combineReducers({
   credentials: serverCredentialsReducer,
 });
+
+export const initialServerState = serverReducer(undefined, nullAction);
