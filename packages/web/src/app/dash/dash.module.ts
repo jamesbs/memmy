@@ -6,7 +6,7 @@ import { UiModule } from 'projects/ui/src/lib/ui.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DashContainerComponent } from './dash.container.component';
-import { MatDialogModule, MatButtonModule, MatInputModule, MatSidenavModule, MatIconModule } from '@angular/material';
+import { MatDialogModule, MatButtonModule, MatInputModule, MatIconModule } from '@angular/material';
 import { AddGalleryDialogComponent } from '../common/add-gallery-dialog/add-gallery-dialog.component';
 
 @NgModule({
@@ -20,7 +20,6 @@ import { AddGalleryDialogComponent } from '../common/add-gallery-dialog/add-gall
     MatButtonModule,
     MatInputModule,
     DragDropModule,
-    MatSidenavModule,
     MatIconModule,
   ],
   entryComponents: [

@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material';
 import { AddGalleryDialogComponent } from '../common/add-gallery-dialog/add-gallery-dialog.component';
 
 import jss from 'jss';
-import { actionStyle } from './dash.component.style';
+import { actionStyle, mainStyle } from './dash.component.style';
 
 @Component({
   selector: 'app-dash',
@@ -18,6 +18,7 @@ export class DashComponent {
 
   sheet = jss.createStyleSheet({
     action: actionStyle,
+    main: mainStyle,
   });
 
   constructor(private dialog: MatDialog) { }
