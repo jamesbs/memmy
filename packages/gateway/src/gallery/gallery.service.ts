@@ -1,12 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { IGalleryService } from './gallery.interface';
-import { User, Gallery, id, GalleryProps, IAddGallery, operationSucceeded } from '@memmy/model';
+import { User, id, IAddGallery, operationSucceeded, IGetGalleryById, IGetGalleriesByToken } from '@memmy/model';
 import { galleryStub } from './gallery-stub';
 import { galleryPropsStub } from './gallery-props-stub';
 import { v1 } from 'uuid';
 
 @Injectable()
-export class GalleryService implements IGalleryService {  
+export class GalleryService {  
   addGallery(user: User, galleryName: string): ReturnType<IAddGallery> {
     const galleryId = v1();
     const galleryProps = {
@@ -31,11 +30,11 @@ export class GalleryService implements IGalleryService {
     };
   }
 
-  getUserGallery(user: User, galleryId: string): Gallery {
+  getUserGallery(user: User, galleryId: string): ReturnType<IGetGalleryById> {
     return galleryStub[id(user)][galleryId];
   }
 
-  getUserGalleries(user: User): GalleryProps[] {
+  getUserGalleries(user: User): ReturnType<IGetGalleriesByToken> {
     return galleryPropsStub;
   }
 }
