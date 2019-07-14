@@ -1,19 +1,53 @@
 <lib-simple-header></lib-simple-header>
-<lib-fixed-list [items]="galleriesToListItems(galleries)">
-</lib-fixed-list>
-<lib-action-bar>
-  <lib-action-bar-body>
-    <button mat-flat-button color="accent" (click)="add()">
-      add
-    </button>
-    <button mat-flat-button color="accent" (click)="invite()">
-      invite
-    </button>
-    <button mat-flat-button color="accent" (click)="upload()">
-      upload
-    </button>
-    <button mat-flat-button color="accent" (click)="logout()">
-      logout
-    </button>
-  </lib-action-bar-body>
-</lib-action-bar>
+<mat-sidenav-container>
+  <mat-sidenav opened position="end" mode="side">
+    <lib-action-bar>
+      <lib-action-bar-body>
+        <div [class]="sheet.classes.action">
+          add gallery
+          <button
+            mat-mini-fab
+            color="accent"
+            (click)="add()"
+            title="add gallery">
+            <mat-icon>add gallery</mat-icon>
+          </button>
+        </div>
+        <div [class]="sheet.classes.action">
+          invite someone
+          <button
+            mat-mini-fab
+            color="accent"
+            (click)="invite()"
+            title="invite someone">
+            <mat-icon>group_add</mat-icon>
+          </button>
+        </div>
+        <div [class]="sheet.classes.action">
+          upload photos
+          <button
+            mat-mini-fab
+            color="accent"
+            (click)="upload()"
+            title="upload photos">
+            <mat-icon>cloud_upload</mat-icon>
+          </button>
+        </div>
+        <div [class]="sheet.classes.action">
+          sign out
+          <button
+            mat-mini-fab
+            color="accent"
+            (click)="logout()"
+            title="logout">
+            <mat-icon>power_settings_new</mat-icon>
+          </button>
+        </div>
+      </lib-action-bar-body>
+    </lib-action-bar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <lib-fixed-list [items]="galleriesToListItems(galleries)">
+    </lib-fixed-list>
+  </mat-sidenav-content>
+</mat-sidenav-container>

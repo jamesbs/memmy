@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import jss from 'jss';
-import { actionBarStyle } from './action-bar.component.style';
+import { barStyle } from './action-bar.component.style';
 
 @Component({
   selector: 'lib-action-bar',
   templateUrl: './action-bar.component.html'
 })
 export class ActionBarComponent implements OnInit {
-  sheet = jss.createStyleSheet(actionBarStyle);
+  sheet = jss.createStyleSheet({ 
+    bar: barStyle,
+  });
 
   constructor() { }
 
@@ -18,5 +20,8 @@ export class ActionBarComponent implements OnInit {
   ngOnDestroy() {
     this.sheet.detach();
   }
+
+  @HostBinding('class')
+  style = this.sheet.classes.bar;
 
 }

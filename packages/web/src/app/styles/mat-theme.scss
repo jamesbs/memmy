@@ -22,3 +22,15 @@ $default-theme: mat-light-theme($default-theme-primary, $default-theme-accent, $
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($default-theme);
+
+.mat-drawer-container {
+  background-color: inherit;
+}
+
+.mat-drawer-side.mat-drawer-end {
+  border-left-width: 0;
+}
+
+.mat-mini-fab {
+  box-shadow: none;
+}

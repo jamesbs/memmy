@@ -4,6 +4,9 @@ import { galleryToListItem } from './gallery-to-list-item';
 import { MatDialog } from '@angular/material';
 import { AddGalleryDialogComponent } from '../common/add-gallery-dialog/add-gallery-dialog.component';
 
+import jss from 'jss';
+import { actionStyle } from './dash.component.style';
+
 @Component({
   selector: 'app-dash',
   templateUrl: './dash.component.html',
@@ -12,6 +15,10 @@ import { AddGalleryDialogComponent } from '../common/add-gallery-dialog/add-gall
 export class DashComponent {
   @Input() galleries: GalleryProps[];
   @Input() logout = nullOperation;
+
+  sheet = jss.createStyleSheet({
+    action: actionStyle,
+  });
 
   constructor(private dialog: MatDialog) { }
 
@@ -24,7 +31,16 @@ export class DashComponent {
   invite = () => {
     console.log('invite');
   }
+  
   upload = () => {
     console.log('upload');
+  }
+
+  ngOnInit() {
+    this.sheet.attach();
+  }
+
+  ngOnDestroy() {
+    this.sheet.detach();
   }
 }

@@ -20,7 +20,7 @@ export class AddGalleryDialogComponent  {
     private store: Store<RootState>,
   ) { }
 
-  readyToUpload = true;
+  readyToUpload = false;
 
   get title() {
     return this.readyToUpload
