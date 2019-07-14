@@ -22,6 +22,8 @@ export const appStyle = {
     },
   },
   app: {
-    font: '1em "Roboto Condensed", sans-serif',
+    font: '1em "Roboto", sans-serif',
+    padding: '1rem',
+    display: 'block',
   },
 };

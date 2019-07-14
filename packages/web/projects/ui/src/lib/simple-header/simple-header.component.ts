@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import jss from 'jss';
-import { linkStyle } from '../style/link.style';
+import { linkStyle, headerStyle, h1Style } from './simple-header.component.style';
 
 @Component({
   selector: 'lib-simple-header',
@@ -9,6 +9,8 @@ import { linkStyle } from '../style/link.style';
 export class SimpleHeaderComponent implements OnInit, OnDestroy {
   sheet = jss.createStyleSheet({
     link: linkStyle,
+    header: headerStyle,
+    h1: h1Style,
   });
 
   ngOnInit() {

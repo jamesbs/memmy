@@ -21,5 +21,9 @@
       {{ item.title }}
     </ng-container>
   </div>
-  <div *ngIf="item.subtitle" class="subtitle">{{ item.subtitle }}</div>
+  <div 
+    *ngIf="item.subtitle"
+    [class]="sheet.classes.itemSubtitle">
+    {{ item.subtitle }}
+  </div>
 </div>

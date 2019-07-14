@@ -2,7 +2,7 @@ import { Component, Input, OnInit, HostBinding } from '@angular/core';
 import { ListItem } from './list-item';
 import { DomSanitizer } from '@angular/platform-browser';
 import jss from 'jss';
-import { fixedListStyle } from './fixed-list.component.style';
+import { hostStyle, itemStyle, itemTitleStyle, itemImageStyle, itemSubtitleStyle } from './fixed-list.component.style';
 
 @Component({
   selector: 'lib-fixed-list',
@@ -11,7 +11,13 @@ import { fixedListStyle } from './fixed-list.component.style';
 export class FixedListComponent implements OnInit {
   @Input() items: ListItem[] = [];
 
-  sheet = jss.createStyleSheet(fixedListStyle);
+  sheet = jss.createStyleSheet({
+    host: hostStyle,
+    item: itemStyle,
+    itemTitle: itemTitleStyle,
+    itemImage: itemImageStyle,
+    itemSubtitle: itemSubtitleStyle,
+  });
 
   styles = this.sheet.classes;
 
