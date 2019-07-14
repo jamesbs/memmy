@@ -4,6 +4,7 @@ import { DashComponent } from './dash.component';
 import { DashRoutingModule } from './dash-routing.module';
 import { UiModule } from 'projects/ui/src/lib/ui.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DashContainerComponent } from './dash.container.component';
 import { MatDialogModule, MatButtonModule, MatInputModule } from '@angular/material';
 import { AddGalleryDialogComponent } from '../common/add-gallery-dialog/add-gallery-dialog.component';
@@ -18,6 +19,7 @@ import { AddGalleryDialogComponent } from '../common/add-gallery-dialog/add-gall
     MatDialogModule,
     MatButtonModule,
     MatInputModule,
+    DragDropModule
   ],
   entryComponents: [
     AddGalleryDialogComponent,

@@ -1,26 +1,46 @@
-<h1 mat-dialog-title>Add a gallery</h1>
-<div class="content" mat-dialog-content>
-  <mat-form-field class="full-width">
-    <input
-      matInput 
-      name="gallery-name"
-      placeholder="Gallery name" 
-      #input>
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button 
-    class="button"
-    mat-flat-button 
-    color="primary"
-    (click)="cancel()">
-    Cancel
-  </button>
-  <button 
-    class="button"
-    mat-flat-button 
-    color="primary"
-    (click)="add(input.value)">
-    Add
-  </button>
-</div>
+<h1 mat-dialog-title>{{title}}</h1>
+<ng-container *ngIf="!readyToUpload">
+  <div class="content" mat-dialog-content>
+    <mat-form-field class="full-width">
+      <input
+        matInput 
+        name="gallery-name"
+        placeholder="Gallery name" 
+        #input>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button 
+      class="button"
+      mat-flat-button 
+      color="primary"
+      (click)="cancel()">
+      Cancel
+    </button>
+    <button 
+      class="button"
+      mat-flat-button 
+      color="primary"
+      (click)="add(input.value)">
+      Add
+    </button>
+  </div>
+</ng-container>
+<ng-container *ngIf="readyToUpload">
+  <input type="file" #fileInput>
+  <div
+    (click)="fileInput.click()"
+    class="drop-well"
+    mat-dialog-content>
+      Click here or drag files here to upload
+  </div>
+  <div mat-dialog-actions>
+    <button
+      class="button"
+      mat-flat-button
+      color="primary"
+      (click)="done()">
+      Done
+    </button>
+  </div>
+</ng-container>

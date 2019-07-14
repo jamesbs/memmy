@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { GalleryService } from 'src/app/model/gallery.service';
 import { ServerCredentialsService } from 'src/app/model/auth/server-credentials.service';
@@ -20,7 +20,19 @@ export class AddGalleryDialogComponent  {
     private store: Store<RootState>,
   ) { }
 
+  readyToUpload = true;
+
+  get title() {
+    return this.readyToUpload
+      ? 'Upload some photos'
+      : 'Create a new gallery';
+  }
+
   cancel() {
+    this.dialogRef.close();
+  }
+
+  done() {
     this.dialogRef.close();
   }
 
@@ -32,7 +44,24 @@ export class AddGalleryDialogComponent  {
     .subscribe(response => {
       if(hasSucceeded(response)) {
         this.store.dispatch(galleryAdded({ gallery: getGenerated(response) }));
+        this.readyToUpload = true;
       }
     })
+  }
+
+
+  @HostListener('drop', ['$event'])
+  itemDropped(event: DragEvent) {
+    if(this.readyToUpload) {
+      event.preventDefault();
+    }
+  }
+
+  @HostListener('dragover', ['$event'])
+  itemDragged(event: DragEvent) {
+    if(this.readyToUpload) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
   }
 }

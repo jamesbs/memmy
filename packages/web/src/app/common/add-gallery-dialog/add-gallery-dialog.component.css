@@ -6,6 +6,19 @@
   min-width: 400px;
 }
 
+.drop-well {
+  width: 400px;
+  height: 100px;
+}
+
+.drop-well:hover {
+  cursor: pointer;
+}
+
 .full-width {
   width: 100%;
+}
+
+input[type=file] {
+  display: none;
 }
