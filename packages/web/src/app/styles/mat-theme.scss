@@ -23,6 +23,7 @@ $default-theme: mat-light-theme($default-theme-primary, $default-theme-accent, $
 // that you are using.
 @include angular-material-theme($default-theme);
 
-.mat-mini-fab {
+button.mat-mini-fab {
   box-shadow: none;
+  overflow: hidden;
 }
