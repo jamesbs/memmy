@@ -12,6 +12,7 @@ export class ServerCredentialsService {
   constructor(private store: Store<RootState>) {
     this.store.select(getCredentials)
       .subscribe(credentials => {
+        console.log('credentils?', credentials);
         this._credentials = credentials;
       });
   }
