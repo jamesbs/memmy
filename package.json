@@ -7,10 +7,15 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "yarn workspace @memmy/web start && yarn workspace @memmy/gateway start"
+    "model:test": "jest --config=model/jest.config.js"
   },
   "devDependencies": {
     "@angular/cli": "^8.0.2",
-    "lerna": "^3.15.0"
+    "@types/jest": "^24.0.16",
+    "jest": "^24.8.0",
+    "jest-preset-typescript": "^1.2.0",
+    "lerna": "^3.15.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
   }
 }
