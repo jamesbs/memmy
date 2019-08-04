@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
@@ -8,9 +9,11 @@
     "target": "es6",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
     "incremental": true,
-    "preserveSymlinks": true
+    "preserveSymlinks": true,
+    "paths": {
+      "@memmy/model": ["../model"]
+    }
   },
   "exclude": ["node_modules"]
 }

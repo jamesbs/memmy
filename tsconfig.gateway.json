@@ -1,0 +1,19 @@
+{
+  "compileOnSave": false,
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "outDir": "gateway/dist",
+    "incremental": true,
+    "preserveSymlinks": true
+  },
+  "exclude": [
+    "node_modules",
+    "gateway/node_modules"
+  ],
+  "include": [
+    "gateway/src/**/*"
+  ]
+}
