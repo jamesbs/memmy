@@ -1,5 +1,5 @@
 {
-  "name": "@memmy/app",
+  "name": "memmy",
   "version": "0.1.0",
   "description": "memmy app",
   "repository": "https://github.com/jamesbs/memmy",
@@ -8,7 +8,13 @@
   "private": true,
   "scripts": {
     "model:test": "jest --config=model/jest.config.js",
-    "gateway:start": "ts-node -P tsconfig.gateway.json -r tsconfig-paths/register gateway/src/main.ts"
+    "gateway:build": "tsc -p tsconfig.gateway.build.json",
+    "gateway:start": "ts-node -P tsconfig.gateway.json -r tsconfig-paths/register gateway/src/main.ts",
+    "gateway:start:debug": "nodemon --config gateway/nodemon-debug.json",
+    "gateway:test": "jest --config=gateway/jest.config.js",
+    "gateway:test:watch": "jest --config=gateway/jest.config.js --watch",
+    "gateway:test:cov": "jest --config=gateway/jest.config.js --cov",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config=gateway/jest.config.js --runInBand"
   },
   "devDependencies": {
     "@angular/cli": "^8.0.2",

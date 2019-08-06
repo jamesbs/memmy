@@ -12,7 +12,7 @@
     "importHelpers": true,
     "target": "es2015",
     "paths": {
-      "@memmy/model": ["model/src/index.ts"],
+      "@memmy/model": ["model/src/index.ts"]
     }
   }
 }

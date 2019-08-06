@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
+console.log('main')
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     httpsOptions: {

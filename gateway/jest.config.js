@@ -1,3 +1,4 @@
+const { pathsToModuleNameMapper } = require('ts-jest/utils');
 module.exports = {
   moduleFileExtensions: [
     'js',
@@ -9,6 +10,14 @@ module.exports = {
   transform: {
     '^.+\\.(t|j)s$': 'ts-jest'
   },
+  globals: {
+    'ts-jest': {
+      tsConfig: './tsconfig.gateway.json'
+    },
+  },
   coverageDirectory: '../coverage',
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  moduleNameMapper: {
+    '@memmy/model': '<rootDir>/../../model/src/index.ts'
+  }
 }
