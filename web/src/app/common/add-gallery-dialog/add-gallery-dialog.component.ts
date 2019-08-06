@@ -1,12 +1,13 @@
 import { Component, HostListener } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { GalleryService } from 'src/app/model/gallery.service';
-import { ServerCredentialsService } from 'src/app/model/auth/server-credentials.service';
-import { responseOf } from 'src/app/core/response-of';
 import { hasSucceeded, getGenerated } from '@memmy/model';
-import { galleryAdded } from 'src/app/model/state/action/gallery/gallery-added';
 import { Store } from '@ngrx/store';
-import { RootState } from 'src/app/model/state/store/root';
+import { ServerCredentialsService } from '../../model/auth/server-credentials.service';
+import { GalleryService } from '../../model/gallery.service';
+import { RootState } from '../../model/state/store/root';
+import { responseOf } from '../../core/response-of';
+import { galleryAdded } from '../../model/state/action/gallery/gallery-added';
+
 @Component({
   selector: 'app-add-gallery-dialog',
   templateUrl: './add-gallery-dialog.component.html',

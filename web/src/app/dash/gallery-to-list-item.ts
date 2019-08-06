@@ -1,5 +1,5 @@
 import { GalleryProps } from '@memmy/model';
-import { ListItem } from 'projects/ui/src/lib/fixed-list/list-item';
+import { ListItem } from 'web/projects/ui/src/lib/fixed-list/list-item';
 
 export function galleryToListItem(gallery: GalleryProps): ListItem {
   return {

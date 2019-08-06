@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { ILogin, LoginCredentials, ServerCredentials, isToken } from '@memmy/model';
 import { ServerRouterService } from '../server-router/server-router.service';
 import { HttpClient } from '@angular/common/http';
-import { ThroughHttpClient } from 'src/app/core/through-http-client';
 import { loginSuccessful } from '../state/action/login';
 import { DispatchService } from '../state/dispatch.service';
 import { filter } from 'rxjs/operators';
 import { responseOf } from '../../core/response-of';
-import { HomeRoutingService } from 'src/app/home/home-routing.service';
+import { HomeRoutingService } from '../../home/home-routing.service';
+import { ThroughHttpClient } from '../../core/through-http-client';
 
 @Injectable({
   providedIn: 'root',

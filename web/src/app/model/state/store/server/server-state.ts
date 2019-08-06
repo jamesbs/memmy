@@ -1,6 +1,6 @@
 import { combineReducers } from '@ngrx/store';
 import { serverCredentialsReducer } from './server-credentials';
-import { nullAction } from 'src/app/core/null-action';
+import { nullAction } from 'web/src/app/core/null-action';
 
 export type ServerState = { [K in keyof typeof initialServerState]: typeof initialServerState[K] };
 

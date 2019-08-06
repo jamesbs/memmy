@@ -1,4 +1,3 @@
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
 module.exports = {
   moduleFileExtensions: [
     'js',

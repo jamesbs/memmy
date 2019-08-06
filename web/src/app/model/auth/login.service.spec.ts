@@ -5,17 +5,17 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { ServerRouterService } from '../server-router/server-router.service';
 import { GatewayService } from '../gateway.service';
 import { DispatchService } from '../state/dispatch.service';
-import { HomeRoutingService } from 'src/app/home/home-routing.service';
 import { AuthorizeService } from './authorize.service';
 import { Store } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { loginSuccessful } from '../state/action/login';
-import { HomeRoutingModule } from 'src/app/home/home-routing.module';
-import { appInjector } from 'src/app/app-injector';
 import { Injector } from '@angular/core';
-import { AppRoutingModule } from 'src/app/app-routing.module';
 import { APP_BASE_HREF } from '@angular/common';
+import { appInjector } from '../../app-injector';
+import { HomeRoutingService } from '../../home/home-routing.service';
+import { AppRoutingModule } from '../../app-routing.module';
+import { HomeRoutingModule } from '../../home/home-routing.module';
 
 describe('LoginService', () => {
   afterAll(() => {

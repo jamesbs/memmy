@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ServerRouterService } from '../server-router/server-router.service';
-import { ThroughHttpClient } from 'src/app/core/through-http-client';
 import { ILogout, hasSucceeded } from '@memmy/model';
 import { HttpClient } from '@angular/common/http';
-import { responseOf } from 'src/app/core/response-of';
 import { DispatchService } from '../state/dispatch.service';
-import { HomeRoutingService } from 'src/app/home/home-routing.service';
 import { logoutSuccessful } from '../state/action/logout';
+import { HomeRoutingService } from '../../home/home-routing.service';
+import { ThroughHttpClient } from '../../core/through-http-client';
+import { responseOf } from '../../core/response-of';
 
 @Injectable({
   providedIn: 'root'

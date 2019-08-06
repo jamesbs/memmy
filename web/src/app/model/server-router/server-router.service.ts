@@ -1,8 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
-import { Environment } from '../../environment';
 import { HttpRequest } from '@angular/common/http';
 import { GatewayService } from '../gateway.service';
-import * as join from 'url-join';
+import join from 'url-join';
 import { LoginCredentials, Identifiable, Token } from '@memmy/model';
 import { AuthorizeService } from '../auth/authorize.service';
 
