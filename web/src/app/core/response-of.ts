@@ -1,14 +1,6 @@
+import { getResponseBody } from './http-response';
+import { TypedResponse } from './typed-response';
 
-import { filter, first, map } from 'rxjs/operators';
-import { isHttpResponse, getResponseBody } from './http-response';
-import { HttpEvent } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
-export function responseOf<T>(event: Observable<HttpEvent<T>>) {
-  return event
-    .pipe(
-      filter(isHttpResponse),
-      first(),
-      map(getResponseBody),
-    );
+export function responseOf<T>(response: Promise<TypedResponse<T>>) {
+  return response.then(getResponseBody);
 }

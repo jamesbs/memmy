@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashComponent } from './dash.component';
 import { DashRoutingModule } from './dash-routing.module';
-import { HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DashContainerComponent } from './dash.container.component';
 import { MatDialogModule, MatButtonModule, MatInputModule, MatIconModule } from '@angular/material';
@@ -15,7 +14,6 @@ import { UiModule } from 'web/projects/ui/src/public-api';
     CommonModule,
     DashRoutingModule,
     UiModule,
-    HttpClientModule,
     MatDialogModule,
     MatButtonModule,
     MatInputModule,

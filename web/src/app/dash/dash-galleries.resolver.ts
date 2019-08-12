@@ -4,7 +4,6 @@ import { GalleryProps } from '@memmy/model';
 import { ServerCredentialsService } from '../model/auth/server-credentials.service';
 import { GalleryService } from '../model/gallery.service';
 import { responseOf } from '../core/response-of';
-import { tap } from 'rxjs/operators';
 import { galleriesReceived } from '../model/state/action/gallery/galleries-received';
 import { Store } from '@ngrx/store';
 import { RootState } from '../model/state/store/root';
@@ -20,8 +19,9 @@ export class DashGalleriesResolver implements Resolve<GalleryProps[]> {
 
   resolve() {
     return responseOf(this.gallery.getGalleriesByToken(this.serverCredentials.credentials))
-      .pipe(tap(galleries => {
+      .then(galleries => {
         this.store.dispatch(galleriesReceived({ galleries }));
-      }));
+        return galleries;
+      });
   }
 }

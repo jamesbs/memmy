@@ -1,16 +1,17 @@
 import { Identifiable, Token } from '@memmy/model';
 import { omit } from 'ramda';
+import mergeDeepRight from 'ramda/es/mergeDeepRight';
+import { RequestExtension, requestExtensionKey } from '../http-request/request-extension';
 
 export interface WithAuthorizer {
   authorization: Token;
 }
-export function authorizeWith(token: Token): WithAuthorizer;
-export function authorizeWith<T>(token: Token, base: T): T & WithAuthorizer;
+export function authorizeWith(token: Token): RequestExtension<WithAuthorizer>;
+export function authorizeWith<T>(token: Token, base: T): T & RequestExtension<WithAuthorizer>;
 export function authorizeWith(token: Token, base = {}) {
-  return {
-    authorization: token,
-    ...base,
-  };
+  return mergeDeepRight(base, {
+    [requestExtensionKey]: { authorization: token },
+  });
 }
 
 export function getAuthorizer(authentication: WithAuthorizer) {

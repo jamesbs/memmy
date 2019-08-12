@@ -42,7 +42,7 @@ export class AddGalleryDialogComponent  {
       this.serverCredentials.credentials,
       galleryName,
     ))
-    .subscribe(response => {
+    .then(response => {
       if(hasSucceeded(response)) {
         this.store.dispatch(galleryAdded({ gallery: getGenerated(response) }));
         this.readyToUpload = true;

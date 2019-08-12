@@ -1,9 +1,5 @@
-import { HttpEvent, HttpResponse, HttpEventType } from '@angular/common/http';
+import { TypedResponse } from './typed-response';
 
-export function isHttpResponse<T>(event: HttpEvent<T>): event is HttpResponse<T> {
-  return event.type === HttpEventType.Response;
-}
-
-export function getResponseBody<T>(response: HttpResponse<T>) {
-  return response.body;
+export function getResponseBody<T>(response: TypedResponse<T>) {
+  return response.json();
 }
