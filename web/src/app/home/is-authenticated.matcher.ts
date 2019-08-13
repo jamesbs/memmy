@@ -1,16 +1,10 @@
-import { UrlSegment, UrlSegmentGroup, Route } from '@angular/router';
-import { ServerCredentialsService } from '../model/auth/server-credentials.service';
-import { appInjector } from '../app-injector';
+import { UrlSegment } from '@angular/router';
+import isAuthenticated from '../model/auth/is-authenticated';
 
-export function isAuthenticatedMatcher(
-  segments: UrlSegment[],
-  _: UrlSegmentGroup,
-  route: Route) {    
-    // hacky but necessary to allow both login and dash to share the same route
-    const serverCredentialsService = appInjector.injector.get(ServerCredentialsService);
+export function isAuthenticatedMatcher(segments: UrlSegment[]) {
     const pathsMatch = segments.join('') === '';
 
-    if (pathsMatch && serverCredentialsService.isAuthenticated()) {
+    if (pathsMatch && isAuthenticated()) {
       return { consumed: segments };
     } else {
       return null;

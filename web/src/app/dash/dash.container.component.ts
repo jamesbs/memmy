@@ -24,7 +24,6 @@ export class DashContainerComponent {
   );
 
   constructor(
-    private route: ActivatedRoute,
     private store: Store<RootState>,
     private logoutService: LogoutService) {
   }

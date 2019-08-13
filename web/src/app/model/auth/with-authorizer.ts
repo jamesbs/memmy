@@ -1,4 +1,4 @@
-import { Identifiable, Token } from '@memmy/model';
+import { Token } from '@memmy/model';
 import { omit } from 'ramda';
 import mergeDeepRight from 'ramda/es/mergeDeepRight';
 import { RequestExtension, requestExtensionKey } from '../http-request/request-extension';

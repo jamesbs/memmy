@@ -2,11 +2,11 @@ import { Component, HostListener } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { hasSucceeded, getGenerated } from '@memmy/model';
 import { Store } from '@ngrx/store';
-import { ServerCredentialsService } from '../../model/auth/server-credentials.service';
 import { GalleryService } from '../../model/gallery.service';
 import { RootState } from '../../model/state/store/root';
 import { responseOf } from '../../core/response-of';
 import { galleryAdded } from '../../model/state/action/gallery/gallery-added';
+import credentials from '../../model/auth/credentials';
 
 @Component({
   selector: 'app-add-gallery-dialog',
@@ -16,7 +16,6 @@ import { galleryAdded } from '../../model/state/action/gallery/gallery-added';
 export class AddGalleryDialogComponent  {
   constructor(
     private dialogRef: MatDialogRef<AddGalleryDialogComponent>,
-    private serverCredentials: ServerCredentialsService,
     private galleryService: GalleryService,
     private store: Store<RootState>,
   ) { }
@@ -39,7 +38,7 @@ export class AddGalleryDialogComponent  {
 
   add(galleryName: string) {
     responseOf(this.galleryService.addGallery(
-      this.serverCredentials.credentials,
+      credentials(),
       galleryName,
     ))
     .then(response => {
