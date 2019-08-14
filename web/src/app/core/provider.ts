@@ -1,0 +1,1 @@
+export type Provider<T, A extends any[]> = (...args: A) => T;

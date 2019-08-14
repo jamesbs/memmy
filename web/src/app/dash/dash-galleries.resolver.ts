@@ -1,25 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { GalleryProps } from '@memmy/model';
-import { GalleryService } from '../model/gallery.service';
 import { responseOf } from '../core/response-of';
 import { galleriesReceived } from '../model/state/action/gallery/galleries-received';
-import { Store } from '@ngrx/store';
-import { RootState } from '../model/state/store/root';
 import credentials from '../model/auth/credentials';
+import dispatch from '../model/state/core/dispatch';
+import getGalleriesByToken from '../model/gallery/get-galleries-by-token';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashGalleriesResolver implements Resolve<GalleryProps[]> {
-  constructor(
-    private gallery: GalleryService,
-    private store: Store<RootState>) { }
-
   resolve() {
-    return responseOf(this.gallery.getGalleriesByToken(credentials()))
+    return responseOf(getGalleriesByToken(credentials()))
       .then(galleries => {
-        this.store.dispatch(galleriesReceived({ galleries }));
+        dispatch(galleriesReceived, { galleries });
         return galleries;
       });
   }

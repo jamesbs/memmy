@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { isAuthenticatedMatcher } from './is-authenticated.matcher';
+import isAuthenticatedMatcher from './is-authenticated-matcher';
 import { RecentlyLoggedOutGuard } from './recently-logged-out.guard';
 
 export const routes: Routes = [
