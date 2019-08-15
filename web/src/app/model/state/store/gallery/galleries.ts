@@ -1,5 +1,5 @@
 import { GalleryProps } from '@memmy/model';
-import { createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '../../core';
 import { galleriesReceived } from '../../action/gallery/galleries-received';
 import { galleryAdded } from '../../action/gallery/gallery-added';
 

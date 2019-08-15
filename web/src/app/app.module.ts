@@ -6,11 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Environment } from './environment';
 import { environment } from '../environments/environment';
-import { StoreModule } from '@ngrx/store';
-import { rootReducer } from './model/state/store/root';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { localStorageSync } from 'ngrx-store-localstorage';
-import { initialServerState } from './model/state/store/server/server-state';
+
 
 @NgModule({
   declarations: [
@@ -19,18 +15,18 @@ import { initialServerState } from './model/state/store/server/server-state';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(
-      rootReducer,
-      {
-        metaReducers: [
-          localStorageSync({
-            rehydrate: true,
-            keys: [
-              { server: ['credentials'] } as { server: (keyof typeof initialServerState)[]},
-            ],
-          }),
-        ]
-      }),
+    // StoreModule.forRoot(
+    //   rootReducer,
+    //   {
+    //     metaReducers: [
+    //       localStorageSync({
+    //         rehydrate: true,
+    //         keys: [
+    //           { server: ['credentials'] } as { server: (keyof typeof initialServerState)[]},
+    //         ],
+    //       }),
+    //     ]
+    //   }),
     StoreDevtoolsModule.instrument({
       logOnly: environment.production,
     }),

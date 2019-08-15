@@ -4,7 +4,7 @@ import { ActionCreatorFactory, ActionSchema, ActionCreator } from './action-sche
 export function createAction<
   T extends string,
   P extends object, 
-  A extends any[]>(type: T, creatorFactory: ActionCreatorFactory<ActionCreator<T, P, A>>) {
+  A extends any[]>(type: T, creatorFactory: ActionCreatorFactory<T, P, A>): ActionSchema<T, P, A> {
 
   return {
     type,

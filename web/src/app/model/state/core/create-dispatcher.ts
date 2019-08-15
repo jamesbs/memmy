@@ -4,7 +4,7 @@ import { ActionSchema, ActionCreator } from './action-schema';
 import { Dispatcher } from './dispatcher';
 
 export const createDispatcherContainer = (store: StoreProvider) => {
-  return <A extends ActionSchema<string, ActionCreator<string, any, any[]>>>(actionSchema: A): Dispatcher<A['creator']> => {
+  return <A extends ActionSchema<string, any, any[]>>(actionSchema: A): Dispatcher<A['creator']> => {
     return (...p) => {
       store.dispatch(actionSchema.creator(...p));
     };

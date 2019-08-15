@@ -1,5 +1,5 @@
 import { initialGalleriesState, galleriesReducer } from './galleries';
-import { combineReducers } from '@ngrx/store';
+import { combineReducers } from 'redux';
 
 export const initialGalleryState = {
   galleries: initialGalleriesState,

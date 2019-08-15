@@ -1,4 +1,4 @@
-import { combineReducers } from '@ngrx/store';
+import { combineReducers } from 'redux';
 import { serverCredentialsReducer } from './server-credentials';
 import { nullAction } from 'web/src/app/core/null-action';
 

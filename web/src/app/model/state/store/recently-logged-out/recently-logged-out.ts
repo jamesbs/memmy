@@ -1,5 +1,5 @@
 import { logoutSuccessful } from '../../action/logout';
-import { createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '../../core';
 
 export const initialRecentlyLoggedOutState: boolean = false;
 
