@@ -8,7 +8,7 @@ fdescribe('Galleries reducer', () => {
       const galleries = [
         { id: 'some id', title: 'gallery title', count: 50, thumbs: { full: 'some image.jpg' }}
       ];
-      const result = galleriesReducer(initialGalleriesState, galleriesReceived({ galleries }));
+      const result = galleriesReducer(initialGalleriesState, galleriesReceived.creator({ galleries }));
       expect(result).toEqual(galleries);
     });
 
@@ -22,7 +22,7 @@ fdescribe('Galleries reducer', () => {
         { id: 'abcdefg', title: 'mock title', count: 111, thumbs: { small: 'smal thumb.jpg'}},
       ];
 
-      const result = galleriesReducer(galleriesInitialState, galleriesReceived({ galleries }));
+      const result = galleriesReducer(galleriesInitialState, galleriesReceived.creator({ galleries }));
       expect(result).toEqual(galleries);
     })
   })
