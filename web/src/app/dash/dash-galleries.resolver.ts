@@ -4,7 +4,7 @@ import { GalleryProps } from '@memmy/model';
 import { responseOf } from '../core/response-of';
 import { galleriesReceived } from '../model/state/action/gallery/galleries-received';
 import credentials from '../model/auth/credentials';
-import dispatch from '../model/state/core/dispatch';
+import dispatch from '../model/state/common/dispatch';
 import getGalleriesByToken from '../model/gallery/get-galleries-by-token';
 
 @Injectable({

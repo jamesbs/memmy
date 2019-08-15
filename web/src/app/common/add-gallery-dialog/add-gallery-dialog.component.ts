@@ -4,7 +4,7 @@ import { hasSucceeded, getGenerated } from '@memmy/model';
 import { responseOf } from '../../core/response-of';
 import { galleryAdded } from '../../model/state/action/gallery/gallery-added';
 import credentials from '../../model/auth/credentials';
-import dispatch from '../../model/state/core/dispatch';
+import dispatch from '../../model/state/common/dispatch';
 import addGallery from '../../model/gallery/add-gallery';
 
 @Component({

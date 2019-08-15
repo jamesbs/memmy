@@ -4,7 +4,7 @@ import { loginSuccessful } from '../../action/login';
 import { ServerCredentials, asServerCredentials } from '@memmy/model';
 import { logoutSuccessful } from '../../action/logout';
 
-export const initialServerCredentialsState: ServerCredentials | undefined = undefined;
+export const initialServerCredentialsState: ServerCredentials | null = null;
 
 export const serverCredentialsReducer = createReducer(
   initialServerCredentialsState,

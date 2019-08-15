@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Store } from '@ngrx/store';
-import { getServerToken } from '../model/state/selector/server/server';
-import { RootState } from '../model/state/store/root';
 import { LogoutService } from '../model/auth/logout.service';
-import { getGalleries } from '../model/state/selector/gallery/galleries';
+import galleries from '../model/gallery/galleries';
+import serverToken from '../model/auth/server-token';
 
 @Component({
   selector: 'app-dash-container',
@@ -16,14 +14,18 @@ import { getGalleries } from '../model/state/selector/gallery/galleries';
 })
 export class DashContainerComponent {
 
-  galleries = this.store.select(getGalleries);
+  galleries = galleries;
 
-  logout = this.store.select(getServerToken).pipe(
+  logout = serverToken.pipe(
     map(token => () => this.logoutService.logout(token)),
   );
 
   constructor(
-    private store: Store<RootState>,
     private logoutService: LogoutService) {
+
+    this.galleries.subscribe(val => {
+      console.log('galleries')
+      console.log(val);
+    })
   }
 }

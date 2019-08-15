@@ -1,13 +1,13 @@
 import { recentlyLoggedOutReducer } from "./recently-logged-out";
-import { INIT } from '@ngrx/store';
 import { logoutSuccessful } from '../../action/logout';
+import { initActionStub } from '../../core/init-action-stub';
 
 describe('recently logged out', () => {
   it('is not recently logged out by default', () => {
-    expect(recentlyLoggedOutReducer(undefined, { type: INIT })).toBe(false);
+    expect(recentlyLoggedOutReducer(undefined, initActionStub)).toBe(false);
   });
 
   it('is recently logged out after a successful login', () => {
-    expect(recentlyLoggedOutReducer(false, logoutSuccessful()));
+    expect(recentlyLoggedOutReducer(false, logoutSuccessful.creator()));
   });
-})
+});

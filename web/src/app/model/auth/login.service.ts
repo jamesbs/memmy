@@ -4,7 +4,7 @@ import { loginSuccessful } from '../state/action/login';
 import { responseOf } from '../../core/response-of';
 import { HomeRoutingService } from '../../home/home-routing.service';
 import { AsHttpRequest } from '../http-request/as-http-request';
-import dispatch from '../state/core/dispatch';
+import dispatch from '../state/common/dispatch';
 import serverRouter from '../server-router/server-router';
 
 @Injectable({

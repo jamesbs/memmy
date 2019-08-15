@@ -1,7 +1,7 @@
 
 import store, { StoreProvider } from '../store/store';
-import { ActionSchema, ActionCreator } from './action-schema';
-import { Dispatcher } from './dispatcher';
+import { ActionSchema } from '../core/action-schema';
+import { Dispatcher } from '../core/dispatcher';
 
 export const createDispatcherContainer = (store: StoreProvider) => {
   return <A extends ActionSchema<string, any, any[]>>(actionSchema: A): Dispatcher<A['creator']> => {
@@ -11,6 +11,6 @@ export const createDispatcherContainer = (store: StoreProvider) => {
   }
 }
 
-export default createDispatcherContainer(store)
-
 export type CreateDispatcherProvider = ReturnType<typeof createDispatcherContainer>
+
+export default createDispatcherContainer(store);

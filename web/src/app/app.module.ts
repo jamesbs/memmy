@@ -27,9 +27,9 @@ import { environment } from '../environments/environment';
     //       }),
     //     ]
     //   }),
-    StoreDevtoolsModule.instrument({
-      logOnly: environment.production,
-    }),
+    // StoreDevtoolsModule.instrument({
+    //   logOnly: environment.production,
+    // }),
     BrowserAnimationsModule,
   ],
   providers: [
